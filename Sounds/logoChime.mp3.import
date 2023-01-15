@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/logoChime.mp3-47bae454f80ce5c07de0e06c0e9615c2.mp3str"
+
+[deps]
+
+source_file="res://Sounds/logoChime.mp3"
+dest_files=[ "res://.import/logoChime.mp3-47bae454f80ce5c07de0e06c0e9615c2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/Onett.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ExtraArt/placeholderLogo-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/LogoScene.gd" type="Script" id=3]
+[ext_resource path="res://Sounds/logoChime.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/TransitionOpen.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "shine"
+length = 3.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.38, 0.39, 0.41, 0.43, 0.46, 0.48, 0.5, 0.53, 0.55, 0.57, 0.59, 0.61 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.6, 2.65 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.960784, 0.960784, 0.960784, 0.937255 ), Color( 0.960784, 0.960784, 0.960784, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.6, 2.65 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.00195312
+anchor_right = 0.00195312
+margin_left = 374.0
+margin_top = 360.0
+margin_right = 650.0
+margin_bottom = 416.0
+custom_colors/font_color = Color( 0.34902, 0.839216, 0.427451, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Drewski Games"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.960784, 0.960784, 0.960784, 1 )
+position = Vector2( 504, 232 )
+scale = Vector2( 5.375, 4.5 )
+texture = ExtResource( 2 )
+hframes = 11
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/shine = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+stream_paused = true
+
+[node name="TransitionOpen" parent="." instance=ExtResource( 5 )]
+layer = -1
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="transition_done" from="TransitionOpen" to="." method="_on_TransitionOpen_transition_done"]

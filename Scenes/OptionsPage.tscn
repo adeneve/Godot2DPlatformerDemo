@@ -1,0 +1,329 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Fonts/Onett.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/OptionsPage.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/TransitionOpen.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxLine" id=3]
+color = Color( 0.87451, 0.25098, 0.184314, 1 )
+
+[sub_resource type="StyleBoxLine" id=4]
+
+[node name="OptionsPage" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.145098, 0.145098, 0.14902, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 1024, 600 )
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 100.0
+grow_vertical = 0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
+margin_left = 448.0
+margin_top = 22.0
+margin_right = 576.0
+margin_bottom = 78.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Options"
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 104.0
+margin_right = 1024.0
+margin_bottom = 118.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer3"]
+margin_left = 512.0
+margin_right = 512.0
+margin_bottom = 14.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 122.0
+margin_right = 1024.0
+margin_bottom = 310.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+margin_left = 342.0
+margin_right = 682.0
+margin_bottom = 188.0
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+margin_right = 340.0
+margin_bottom = 28.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer"]
+margin_left = 2.0
+margin_right = 338.0
+margin_bottom = 28.0
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_right = 12.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 12, 0 )
+custom_colors/font_color = Color( 0, 0.815686, 0.0509804, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = ">"
+
+[node name="MusicVolume" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_left = 16.0
+margin_right = 336.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 320, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Music Volume"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/MusicVolume"]
+margin_left = 134.0
+margin_right = 214.0
+margin_bottom = 25.0
+custom_styles/slider = SubResource( 3 )
+custom_styles/grabber_area = SubResource( 4 )
+min_value = -40.0
+max_value = 1.0
+value = -1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+margin_top = 32.0
+margin_right = 340.0
+margin_bottom = 60.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2"]
+margin_left = 2.0
+margin_right = 338.0
+margin_bottom = 28.0
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
+margin_right = 12.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 12, 0 )
+custom_colors/font_color = Color( 0, 0.815686, 0.0509804, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = ">"
+
+[node name="EffectsVolume" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
+margin_left = 16.0
+margin_right = 336.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 320, 0 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Sound Effects Volume"
+
+[node name="EffectsVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/EffectsVolume"]
+margin_left = 220.0
+margin_right = 300.0
+margin_bottom = 25.0
+custom_styles/slider = SubResource( 3 )
+custom_styles/grabber_area = SubResource( 4 )
+value = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+margin_top = 64.0
+margin_right = 340.0
+margin_bottom = 92.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3"]
+margin_left = 2.0
+margin_right = 338.0
+margin_bottom = 28.0
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
+margin_right = 12.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 12, 0 )
+custom_colors/font_color = Color( 0, 0.815686, 0.0509804, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = ">"
+
+[node name="Bindings" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
+margin_left = 16.0
+margin_right = 336.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 320, 0 )
+mouse_filter = 0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Controls & Key Bindings"
+
+[node name="RefRec" type="ReferenceRect" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/Bindings"]
+visible = false
+margin_top = 30.0
+margin_right = 214.0
+margin_bottom = 30.0
+border_color = Color( 0.00784314, 0.984314, 0, 1 )
+border_width = 1.6
+editor_only = false
+
+[node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+margin_top = 96.0
+margin_right = 340.0
+margin_bottom = 124.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4"]
+margin_left = 2.0
+margin_right = 338.0
+margin_bottom = 28.0
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer"]
+margin_right = 12.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 12, 0 )
+custom_colors/font_color = Color( 0, 0.815686, 0.0509804, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = ">"
+
+[node name="FullScreen" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer"]
+margin_left = 16.0
+margin_right = 336.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 320, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Toggle Full Screen"
+
+[node name="CheckBoxFullscreen" type="CheckBox" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer/FullScreen"]
+margin_left = 180.0
+margin_top = 3.0
+margin_right = 204.0
+margin_bottom = 27.0
+
+[node name="ReferenceRect" type="ReferenceRect" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer/FullScreen/CheckBoxFullscreen"]
+margin_left = 5.0
+margin_top = 4.0
+margin_right = 20.0
+margin_bottom = 20.0
+mouse_filter = 1
+border_color = Color( 1, 1, 1, 1 )
+border_width = 2.8
+editor_only = false
+
+[node name="CenterContainer5" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+margin_top = 128.0
+margin_right = 340.0
+margin_bottom = 156.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5"]
+margin_left = 2.0
+margin_right = 338.0
+margin_bottom = 28.0
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5/HBoxContainer"]
+margin_right = 12.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 12, 0 )
+custom_colors/font_color = Color( 0, 0.815686, 0.0509804, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = ">"
+
+[node name="Borderless" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5/HBoxContainer"]
+margin_left = 16.0
+margin_right = 336.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 320, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Toggle Borderless Window"
+
+[node name="CheckBoxBorderless" type="CheckBox" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5/HBoxContainer/Borderless"]
+margin_left = 240.0
+margin_top = 3.0
+margin_right = 264.0
+margin_bottom = 27.0
+
+[node name="ReferenceRect" type="ReferenceRect" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5/HBoxContainer/Borderless/CheckBoxBorderless"]
+margin_left = 5.0
+margin_top = 4.0
+margin_right = 20.0
+margin_bottom = 20.0
+mouse_filter = 1
+border_color = Color( 1, 1, 1, 1 )
+border_width = 2.8
+editor_only = false
+
+[node name="CenterContainer6" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+margin_top = 160.0
+margin_right = 340.0
+margin_bottom = 188.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer6"]
+margin_right = 340.0
+margin_bottom = 28.0
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer6/HBoxContainer"]
+margin_right = 16.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 16, 0 )
+custom_colors/font_color = Color( 0, 0.815686, 0.0509804, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = ">"
+
+[node name="Back" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer6/HBoxContainer"]
+margin_left = 20.0
+margin_right = 340.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 320, 0 )
+mouse_filter = 0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Back"
+
+[node name="RefRec" type="ReferenceRect" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer6/HBoxContainer/Back"]
+visible = false
+margin_top = 30.0
+margin_right = 41.0
+margin_bottom = 30.0
+border_color = Color( 0.00784314, 0.984314, 0, 1 )
+border_width = 1.6
+editor_only = false
+
+[node name="TransitionOpen" parent="." instance=ExtResource( 3 )]
+layer = -1
+
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/MusicVolume/MusicVolumeSlider" to="." method="_on_MusicVolumeSlider_value_changed"]
+[connection signal="gui_input" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/Bindings" to="." method="_on_Bindings_gui_input"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/Bindings" to="." method="_on_Bindings_mouse_entered"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer/FullScreen/CheckBoxFullscreen" to="." method="_on_CheckBoxFullscreen_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer5/HBoxContainer/Borderless/CheckBoxBorderless" to="." method="_on_CheckBoxBorderless_pressed"]
+[connection signal="gui_input" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer6/HBoxContainer/Back" to="." method="_on_Back_gui_input"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer6/HBoxContainer/Back" to="." method="_on_Back_mouse_entered"]

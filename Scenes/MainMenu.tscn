@@ -1,0 +1,242 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://ExtraArt/flameSword.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fonts/Onett.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Sounds/IntroSong2.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/TransitionOpen.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="MainMenu" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1024, 600 )
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.145098, 0.145098, 0.14902, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 374.0
+margin_top = 215.0
+margin_right = 650.0
+margin_bottom = 385.0
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_right = 276.0
+margin_bottom = 56.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
+margin_right = 276.0
+margin_bottom = 56.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Elemental Blade"
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 60.0
+margin_right = 276.0
+margin_bottom = 74.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer3"]
+margin_left = 138.0
+margin_right = 138.0
+margin_bottom = 14.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 78.0
+margin_right = 276.0
+margin_bottom = 170.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+margin_left = 82.0
+margin_right = 194.0
+margin_bottom = 92.0
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+margin_right = 112.0
+margin_bottom = 28.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer"]
+margin_right = 112.0
+margin_bottom = 28.0
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_right = 12.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 12, 0 )
+custom_colors/font_color = Color( 0, 0.913725, 0.25098, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = ">"
+
+[node name="NewGame" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_left = 16.0
+margin_right = 112.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 64, 0 )
+mouse_filter = 1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "New Game"
+
+[node name="RefLine" type="ReferenceRect" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/NewGame"]
+margin_top = 30.0
+margin_right = 93.0
+margin_bottom = 30.0
+border_color = Color( 0, 0.862745, 0.113725, 1 )
+border_width = 2.0
+editor_only = false
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+visible = false
+margin_top = 32.0
+margin_right = 114.0
+margin_bottom = 60.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2"]
+margin_right = 114.0
+margin_bottom = 28.0
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
+margin_right = 12.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 12, 0 )
+custom_colors/font_color = Color( 0, 0.913725, 0.25098, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = ">"
+
+[node name="LoadGame" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer"]
+margin_left = 16.0
+margin_right = 114.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 64, 0 )
+mouse_filter = 1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Load Game"
+
+[node name="RefLine" type="ReferenceRect" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/LoadGame"]
+visible = false
+margin_top = 30.0
+margin_right = 93.0
+margin_bottom = 30.0
+border_color = Color( 0, 0.862745, 0.113725, 1 )
+border_width = 2.0
+editor_only = false
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+margin_top = 32.0
+margin_right = 112.0
+margin_bottom = 60.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3"]
+margin_right = 111.0
+margin_bottom = 28.0
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
+margin_right = 12.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 12, 0 )
+custom_colors/font_color = Color( 0, 0.913725, 0.25098, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = ">"
+
+[node name="Options" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer"]
+margin_left = 16.0
+margin_right = 111.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 95, 0 )
+mouse_filter = 1
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Options"
+
+[node name="RefLine" type="ReferenceRect" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/Options"]
+visible = false
+margin_top = 30.0
+margin_right = 60.0
+margin_bottom = 30.0
+border_color = Color( 0, 0.862745, 0.113725, 1 )
+border_width = 2.0
+editor_only = false
+
+[node name="CenterContainer4" type="CenterContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer"]
+margin_top = 64.0
+margin_right = 112.0
+margin_bottom = 92.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4"]
+margin_right = 111.0
+margin_bottom = 28.0
+
+[node name="Selector" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer"]
+margin_right = 12.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 12, 0 )
+custom_colors/font_color = Color( 0, 0.913725, 0.25098, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = ">"
+
+[node name="Exit" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer"]
+margin_left = 16.0
+margin_right = 111.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 95, 0 )
+mouse_filter = 1
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Exit"
+
+[node name="RefLine" type="ReferenceRect" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer/Exit"]
+visible = false
+margin_top = 30.0
+margin_right = 28.0
+margin_bottom = 30.0
+border_color = Color( 0, 0.862745, 0.113725, 1 )
+border_width = 2.0
+editor_only = false
+
+[node name="flameSword" parent="CenterContainer/VBoxContainer" instance=ExtResource( 2 )]
+position = Vector2( -174, 69 )
+scale = Vector2( 3, 3 )
+
+[node name="flameSword2" parent="CenterContainer/VBoxContainer" instance=ExtResource( 2 )]
+position = Vector2( 426, 65 )
+scale = Vector2( 3, 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="TransitionOpen" parent="." instance=ExtResource( 5 )]
+layer = -1
+
+[connection signal="gui_input" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/NewGame" to="." method="_on_NewGame_gui_input"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/NewGame" to="." method="_on_NewGame_mouse_entered"]
+[connection signal="gui_input" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/LoadGame" to="." method="_on_LoadGame_gui_input"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/LoadGame" to="." method="_on_LoadGame_mouse_entered"]
+[connection signal="gui_input" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/Options" to="." method="_on_Options_gui_input"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/Options" to="." method="_on_Options_mouse_entered"]
+[connection signal="gui_input" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer/Exit" to="." method="_on_Exit_gui_input"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer4/HBoxContainer/Exit" to="." method="_on_Exit_mouse_entered"]

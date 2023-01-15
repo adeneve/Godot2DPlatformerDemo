@@ -1,0 +1,138 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/Onett.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/pause_popup.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/Onett.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="pause_popup" type="Popup"]
+pause_mode = 2
+margin_top = -150.0
+margin_right = 40.0
+margin_bottom = -110.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -50.0
+margin_right = 230.0
+margin_bottom = 160.0
+color = Color( 0, 0, 0, 0.831373 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -6.0
+margin_right = 234.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 100, 50 )
+custom_fonts/font = SubResource( 1 )
+text = "Game Paused"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_left = 25.0
+margin_top = 40.0
+margin_right = 189.0
+margin_bottom = 156.0
+
+[node name="vboxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 37.0
+margin_top = 12.0
+margin_right = 126.0
+margin_bottom = 104.0
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/vboxContainer"]
+margin_right = 89.0
+margin_bottom = 28.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/vboxContainer/CenterContainer"]
+margin_right = 89.0
+margin_bottom = 28.0
+
+[node name="Selector" type="Label" parent="CenterContainer/vboxContainer/CenterContainer/HBoxContainer"]
+margin_right = 15.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 15, 0 )
+custom_fonts/font = ExtResource( 1 )
+text = ">"
+
+[node name="OptionName" type="Label" parent="CenterContainer/vboxContainer/CenterContainer/HBoxContainer"]
+margin_left = 19.0
+margin_right = 89.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 70, 20 )
+custom_fonts/font = SubResource( 2 )
+text = "Resume"
+
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/vboxContainer"]
+margin_top = 32.0
+margin_right = 89.0
+margin_bottom = 60.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/vboxContainer/CenterContainer2"]
+margin_right = 89.0
+margin_bottom = 28.0
+
+[node name="Selector" type="Label" parent="CenterContainer/vboxContainer/CenterContainer2/HBoxContainer"]
+margin_right = 15.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 15, 0 )
+custom_fonts/font = ExtResource( 1 )
+text = ">"
+
+[node name="OptionName" type="Label" parent="CenterContainer/vboxContainer/CenterContainer2/HBoxContainer"]
+margin_left = 19.0
+margin_right = 89.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 70, 20 )
+custom_fonts/font = SubResource( 2 )
+text = "Save"
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/vboxContainer"]
+margin_top = 64.0
+margin_right = 89.0
+margin_bottom = 92.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/vboxContainer/CenterContainer3"]
+margin_left = 1.0
+margin_right = 88.0
+margin_bottom = 28.0
+
+[node name="Selector" type="Label" parent="CenterContainer/vboxContainer/CenterContainer3/HBoxContainer"]
+margin_right = 15.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 15, 12 )
+custom_fonts/font = ExtResource( 1 )
+text = ">"
+
+[node name="OptionName" type="Label" parent="CenterContainer/vboxContainer/CenterContainer3/HBoxContainer"]
+margin_left = 19.0
+margin_right = 87.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 68, 12 )
+custom_fonts/font = ExtResource( 1 )
+text = "Exit"
+
+[node name="SaveLabel" type="Label" parent="."]
+visible = false
+margin_left = -22.0
+margin_top = 90.0
+margin_right = 57.0
+margin_bottom = 104.0
+custom_colors/font_color = Color( 0.027451, 1, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Game Saved!"
